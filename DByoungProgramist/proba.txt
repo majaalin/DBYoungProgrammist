@@ -1,0 +1,20 @@
+1> <PROBA EKSPORTU STRING> <cos tam> <jakiś toroch 
+  dłuzszy tekst 
+  {
+  
+   foeach (var p in cos)
+  {
+  consoel. writeline (cos ma sie wyswitelić);  
+  }
+        
+  }> <1
+2> <PROBA EKSPORTU PĘTLE> <znownu rótki opis> <jakiś toroch 
+  dłuzszy tekst 
+  {
+  
+   foeach (var p in cos)
+  {
+  consoel. writeline (cos ma sie wyswitelić);  
+  }
+        i jescz e roszszeramy o coś 
+  }> <2
