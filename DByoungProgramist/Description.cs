@@ -80,8 +80,7 @@ namespace DByoungProgramist
         {
             var db = Db.connect();
             var col = db.GetCollection<Description>("Description");
-            var json = JsonSerializer.Serialize(new BsonArray(db.Engine.Find("Description")));
-             
+            var json = JsonSerializer.Serialize(new BsonArray(db.Engine.Find("Description"))); 
         }
 
         public static void Import(string sciezka)
@@ -98,7 +97,6 @@ namespace DByoungProgramist
             {
                 db.DropCollection("Description");
                 db.Shrink();
-
             }
 
         }

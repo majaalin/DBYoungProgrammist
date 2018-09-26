@@ -282,6 +282,7 @@ namespace DByoungProgramist
                     lblHead.Text = c.CategoryName.ToUpper();
                 }
             }
+            seekName = 1;
         }
 
         private void String_Click(object sender, EventArgs e)
@@ -304,15 +305,48 @@ namespace DByoungProgramist
             AllVisibleTrue(gbAll);
             ColorOffButtonDelete();
         }
+        int seekName;
+        private void Search(int number)
+        {
+            if (seekName == 1) txt.Text = txt.Text.ToUpper();
 
+            StringBuilder seek = new StringBuilder(txt.Text);
+            filldgGrid2(dgGridDescription);
+            for (int i = 0; i < dgGridDescription.RowCount; i++)
+            {
+                if (seekName == 2)
+                {
+                    txt.Text = txt.Text.ToLower();
+                    dgGridDescription.Rows[i].Cells[number].Value.ToString().ToLower();
+                }
+                String grid = dgGridDescription.Rows[i].Cells[number].Value.ToString();
+
+                for (int j = 0; j < seek.Length; j++)
+                {
+                    if (txt.Text == "")
+                    {
+                        filldgGrid2(dgGridDescription);
+                    }
+                
+                    else if (!dgGridDescription.Rows[i].Cells[number].Value.ToString().Contains(txt.Text))
+                    {
+                        dgGridDescription.Rows[i].Visible = false;
+                    }
+                    else if (dgGridDescription.Rows[i].Cells[number].Value.ToString().Contains(txt.Text))
+                  
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        dgGridDescription.Rows[i].Visible = false;
+                    }
+                }
+            }
+        }
         private void btnAllSeek_Click(object sender, EventArgs e)
         {
-            dgGridDescription.Rows.Clear();
-            foreach (var r in Description.getAll())
-            {
-                dgGridDescription.Rows.Add(r.Id, r.Name, r.ShortDescription, r.LongDescription);
-            }
-           
+            Search(seekName);
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
