@@ -2,7 +2,7 @@
   dłuzszy tekst 
   {
   
-   foeach (var p in cos)
+   foreach (var p in cos)
   {
   consoel. writeline (cos ma sie wyswitelić);  
   }
@@ -12,7 +12,7 @@
   dłuzszy tekst 
   {
   
-   foeach (var p in cos)
+   foreach (var p in cos)
   {
   consoel. writeline (cos ma sie wyswitelić);  
   }
